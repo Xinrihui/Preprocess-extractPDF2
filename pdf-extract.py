@@ -1,11 +1,11 @@
 # -*- coding: UTF-8 -*-
-# 目录和文件
+
 import os
 
-
-import sys
-reload(sys)
-sys.setdefaultencoding("utf-8")
+# for python2
+# import sys
+# reload(sys)
+# sys.setdefaultencoding("utf-8")
 
 # import pdfminer.
 
@@ -60,7 +60,7 @@ def pdf2txt_onefile(s_filename,sourcedir,outputdir,para1):
 
     s_para = ' -o ' + outputdir + ' '+para1+' ' + sourcedir
     cmd = s_programe + ' ' + s_para
-    print 'cmd:', cmd
+    print ('cmd:', cmd)
     os.system(s_programe + ' ' + s_para)
 
 # pdf2txt_onefile('VLDB2016.pdf','data','result',' -M 2.0 -L 0.5 -W 0.1 -F 0.0 ') the para for english
@@ -111,7 +111,7 @@ def txt_trans_onefile(dir):
 
     file = open('tmp.txt', 'rb')
     alllines=file.readlines()
-    print alllines
+    print (alllines)
     for i in range(len(alllines)):
         # print line
         line=alllines[i]
@@ -128,7 +128,7 @@ def txt_trans_onefile(dir):
         #     line = line.replace('\r\n', '')
         #     alllines[i] = line
 
-    print alllines
+    print (alllines)
     file.close()
 
     file = open('tmp.txt', 'wb')
